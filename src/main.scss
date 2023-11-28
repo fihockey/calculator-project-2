@@ -2,14 +2,18 @@
 
 * {
   font-family: $main-font;
+  font-size: 45px;
+  padding: 0;
+  margin: 0;
 }
 
 .header {
-  height: 100px;
+  height: 150px;
   background-color: palevioletred;
+  display: flex;
 
   &__image {
-    height: auto;
+    max-height: 200px;
     width: 100vw;
   }
 }
@@ -19,7 +23,7 @@
   justify-content: center;
   align-items: center;
   padding: 50px;
-  background-color: pink;
+  background-color: #601A3E;
   box-shadow: 2px;
 
   &__grid {
@@ -32,54 +36,94 @@
       display: flex;
       justify-content: flex-end;
       height: 50px;
-      background-color: grey;
+      background-color: #FFFEDF;
       grid-column: 1 / 5;
     }
 
     &-clear {
       grid-column: 1 / 3;
+      background-color: #DF2A4D;
+    }
+
+    &-smile {
+        background-color: #FF9E4F;
+    }
+
+    &-divide {
+        background-color: #FF9E4F;
     }
 
     &-seven {
       border-radius: 30%;
+      background-color: #FF7159;
     }
 
     &-eight {
       border-radius: 30%;
+      background-color: #FF7159;
     }
 
     &-nine {
       border-radius: 30%;
+      background-color: #FF7159;
+    }
+
+    &-multiply {
+        background-color: #FF9E4F;
     }
 
     &-four {
       border-radius: 30%;
+      background-color: #FF7159;
     }
 
     &-five {
       border-radius: 30%;
+      background-color: #FF7159;
     }
 
     &-six {
       border-radius: 30%;
+      background-color: #FF7159;
+    }
+
+    &-subtract {
+        background-color: #FF9E4F;
     }
 
     &-one {
       border-radius: 30%;
+      background-color: #FF7159;
     }
 
     &-two {
       border-radius: 30%;
+      background-color: #FF7159;
     }
 
     &-three {
       border-radius: 30%;
+      background-color: #FF7159;
+    }
+
+    &-add {
+        background-color: #FF9E4F;
     }
 
     &-zero {
       grid-column: 1 / 3;
       border-radius: unset;
+      background-color: #DF2A4D;
     }
+
+    &-point {
+        background-color: #DF2A4D;
+    }
+
+    &-equals {
+        background-color: #FF9E4F;
+    }
+
   }
 
   &__screen {
@@ -87,7 +131,55 @@
   }
 }
 
-footer {
-  height: 50px;
-  background-color: palevioletred;
+// footer {
+//   height: 50px;
+//   background-color: #601A3E;
+// }
+
+@media screen and (min-width: 768px) {
+
+    .header {
+        &__image {
+          max-height: 325px;
+        }
+    }
+
+    .calculator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .header {
+        &__image {
+          max-height: 450px;
+        }
+    }
+
+    .calculator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+
+    .header {
+        &__image {
+          max-height: 550px;
+        }
+      }
+      
+    .calculator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
 }

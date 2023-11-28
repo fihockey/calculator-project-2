@@ -8,7 +8,7 @@ let result = "";
 const numberButtons = document.querySelectorAll(".number");
 const operatorButtons = document.querySelectorAll(".operator");
 const clearButton = document.querySelector(".clear-button");
-const dotButton = document.querySelector(".dot-button");
+const pointButton = document.querySelector(".point-button");
 const equalsButton = document.querySelector(".equals-button");
 const calculatorScreen = document.querySelector<HTMLHeadElement>(".calculator__grid-screen");
 
@@ -16,7 +16,7 @@ if (
   !numberButtons ||
   !operatorButtons ||
   !clearButton ||
-  !dotButton ||
+  !pointButton ||
   !equalsButton ||
   !calculatorScreen
 ) {
@@ -82,9 +82,9 @@ const handleClickClear = (event: Event) => {
 
 clearButton.addEventListener("click", handleClickClear);
 
-const handleClickDot = (event: Event) => {
+const handleClickPoint = (event: Event) => {
   const button = event.target as HTMLButtonElement;
   calculatorScreen.innerText += button.innerText;
 };
 
-dotButton.addEventListener("click", handleClickDot);
+pointButton.addEventListener("click", handleClickPoint);
