@@ -66,13 +66,33 @@ const handleDivide = (num1 : number, num2 : number) => {
 
 
 // EQUALS
+const handleEquals = () => {
+  if (operator === "+") {
+    const result = handleAdd(Number(num1), Number (num2))
+    calculatorScreen.innerText = `${result}`
+  } else if (operator === "-") {
+    const result = handleSubtract(Number(num1), Number (num2))
+    calculatorScreen.innerText = `${result}`
+  } else if (operator === "×") {
+    const result = handleMultiply(Number(num1), Number (num2))
+    calculatorScreen.innerText = `${result}`
+  } else if (operator === "÷") {
+    const result = handleDivide(Number(num1), Number (num2))
+    calculatorScreen.innerText = `${result}`
+  }
+  
+}
 
+// CHECK THE OPERATOR USING IF STATEMENTS
+  // USE THE FUNCTION TO COMPLETE OPERATION
+  // UPDATE THE DISPLAY
+equalsButton.addEventListener("click", handleEquals)
 
 
 const handleClickOperator = (event: Event) => {
   const button = event.target as HTMLButtonElement;
   calculatorScreen.innerText += button.innerText;
-
+  operator = button.innerText
 };
 
 operatorButtons.forEach((button) => {
@@ -81,6 +101,10 @@ operatorButtons.forEach((button) => {
 
 const handleClickClear = (event: Event) => {
   calculatorScreen.innerText = "";
+  num1 = ""
+  num2 = ""
+  operator = ""
+  result = ""
 };
 
 clearButton.addEventListener("click", handleClickClear);
@@ -93,7 +117,7 @@ const handleClickPoint = (event: Event) => {
 pointButton.addEventListener("click", handleClickPoint);
 
 const options : Options = {
-  particleCount: 150,
+  particleCount: 125,
   spread: 150,
   colors: ["#DF2A4D", "#FF7159", "#FFFEDF"]
 }
