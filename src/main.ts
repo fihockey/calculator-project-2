@@ -1,4 +1,5 @@
 import "./main.scss";
+import confetti, { Options } from "canvas-confetti"
 
 let num1 = "";
 let operator = "";
@@ -11,6 +12,7 @@ const clearButton = document.querySelector(".clear-button");
 const pointButton = document.querySelector(".point-button");
 const equalsButton = document.querySelector(".equals-button");
 const calculatorScreen = document.querySelector<HTMLHeadElement>(".calculator__grid-screen");
+const smileButton = document.querySelector(".smile-button");
 
 if (
   !numberButtons ||
@@ -18,7 +20,8 @@ if (
   !clearButton ||
   !pointButton ||
   !equalsButton ||
-  !calculatorScreen
+  !calculatorScreen ||
+  !smileButton
 ) {
   throw new Error("Issue with button");
 }
@@ -88,3 +91,15 @@ const handleClickPoint = (event: Event) => {
 };
 
 pointButton.addEventListener("click", handleClickPoint);
+
+const options : Options = {
+  particleCount: 150,
+  spread: 150,
+  colors: ["#DF2A4D", "#FF7159", "#FFFEDF"]
+}
+
+const fireConfetti = () => {
+  confetti(options);
+}
+
+smileButton.addEventListener("click", fireConfetti);
