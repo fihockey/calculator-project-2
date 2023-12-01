@@ -4,7 +4,6 @@ import confetti, { Options } from "canvas-confetti";
 let num1 = "";
 let operator = "";
 let num2 = "";
-let result = "";
 
 const numberButtons = document.querySelectorAll(".number");
 const operatorButtons = document.querySelectorAll(".operator");
@@ -85,12 +84,11 @@ const handleClickOperator = (event: Event) => {
   operator = button.innerText;
 };
 
-const handleClickClear = (event: Event) => {
+const handleClickClear = () => {
   calculatorScreen.innerText = "";
   num1 = "";
   num2 = "";
   operator = "";
-  result = "";
 };
 
 const handleClickPoint = (event: Event) => {
